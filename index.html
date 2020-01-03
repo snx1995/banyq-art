@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banyq art</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #2c3e50;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .slide-img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: #00b3ee;">
+                <img class="slide-img">
+            </div>
+            <div class="swiper-slide" style="background-color: #e67e22;">
+                <img class="slide-img">
+            </div>
+            <div class="swiper-slide" style="background-color: #2ecc71;">
+                <img class="slide-img">
+            </div>
+            <div class="swiper-slide" style="background-color: #cc2e2e;">
+                <img class="slide-img">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/preload.js"></script>
+    <script>
+        window.onload = () => {
+            const swiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination'
+                }
+            })
+            const slideImgs = document.querySelectorAll('.slide-img');
+            preload(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
+                console.log(data);
+                alert('preload completed');
+                slideImgs.forEach((img, i) => {
+                    const url = URL.createObjectURL(data[i]);
+                    img.src = url;
+                })
+            })
+        }
+    </script>
+</body>
+</html>
