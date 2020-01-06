@@ -1,4 +1,4 @@
-function preload(urls = []) {
+function load(urls = []) {
     return new Promise((resolve, reject) => {
         const mapper = {};
         const deWeightedUrl = urls.filter((e, i) => {

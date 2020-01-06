@@ -46,7 +46,7 @@
     </div>
     <script src="./js/axios.min.js"></script>
     <script src="./js/swiper.min.js"></script>
-    <script src="./js/preload.js"></script>
+    <script src="./js/load.js"></script>
     <script>
         window.onload = () => {
             const swiper = new Swiper('.swiper-container', {
@@ -57,7 +57,7 @@
                 }
             })
             const slideImgs = document.querySelectorAll('.slide-img');
-            preload(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
+            load(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
                 console.log(data);
                 alert('preload completed');
                 slideImgs.forEach((img, i) => {
