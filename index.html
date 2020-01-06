@@ -30,6 +30,17 @@
             fill: none;
             stroke-linejoin: round;
         }
+        #grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #grid path {
+            stroke: #666;
+        }
+        #svg {
+            position: relative;
+        }
         .svg-ani {
             stroke: #fff;
             fill: none;
@@ -71,9 +82,16 @@
         <div class="swiper-pagination"></div>
     </div> -->
     <div class="loading-overlay">
-        <svg width="400" height="400">
-            <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-bg"/>
-            <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-ani"/>
+        <svg width="400" height="400" id="grid">
+            <path d="M0 0H400" stroke="#666"></path><path d="M0 0V400" stroke="#666"></path><path d="M0 10H400" stroke="#666"></path><path d="M10 0V400" stroke="#666"></path><path d="M0 20H400" stroke="#666"></path><path d="M20 0V400" stroke="#666"></path><path d="M0 30H400" stroke="#666"></path><path d="M30 0V400" stroke="#666"></path><path d="M0 40H400" stroke="#666"></path><path d="M40 0V400" stroke="#666"></path><path d="M0 50H400" stroke="#666"></path><path d="M50 0V400" stroke="#666"></path><path d="M0 60H400" stroke="#666"></path><path d="M60 0V400" stroke="#666"></path><path d="M0 70H400" stroke="#666"></path><path d="M70 0V400" stroke="#666"></path><path d="M0 80H400" stroke="#666"></path><path d="M80 0V400" stroke="#666"></path><path d="M0 90H400" stroke="#666"></path><path d="M90 0V400" stroke="#666"></path><path d="M0 100H400" stroke="#666"></path><path d="M100 0V400" stroke="#666"></path><path d="M0 110H400" stroke="#666"></path><path d="M110 0V400" stroke="#666"></path><path d="M0 120H400" stroke="#666"></path><path d="M120 0V400" stroke="#666"></path><path d="M0 130H400" stroke="#666"></path><path d="M130 0V400" stroke="#666"></path><path d="M0 140H400" stroke="#666"></path><path d="M140 0V400" stroke="#666"></path><path d="M0 150H400" stroke="#666"></path><path d="M150 0V400" stroke="#666"></path><path d="M0 160H400" stroke="#666"></path><path d="M160 0V400" stroke="#666"></path><path d="M0 170H400" stroke="#666"></path><path d="M170 0V400" stroke="#666"></path><path d="M0 180H400" stroke="#666"></path><path d="M180 0V400" stroke="#666"></path><path d="M0 190H400" stroke="#666"></path><path d="M190 0V400" stroke="#666"></path><path d="M0 200H400" stroke="#666"></path><path d="M200 0V400" stroke="#666"></path><path d="M0 210H400" stroke="#666"></path><path d="M210 0V400" stroke="#666"></path><path d="M0 220H400" stroke="#666"></path><path d="M220 0V400" stroke="#666"></path><path d="M0 230H400" stroke="#666"></path><path d="M230 0V400" stroke="#666"></path><path d="M0 240H400" stroke="#666"></path><path d="M240 0V400" stroke="#666"></path><path d="M0 250H400" stroke="#666"></path><path d="M250 0V400" stroke="#666"></path><path d="M0 260H400" stroke="#666"></path><path d="M260 0V400" stroke="#666"></path><path d="M0 270H400" stroke="#666"></path><path d="M270 0V400" stroke="#666"></path><path d="M0 280H400" stroke="#666"></path><path d="M280 0V400" stroke="#666"></path><path d="M0 290H400" stroke="#666"></path><path d="M290 0V400" stroke="#666"></path><path d="M0 300H400" stroke="#666"></path><path d="M300 0V400" stroke="#666"></path><path d="M0 310H400" stroke="#666"></path><path d="M310 0V400" stroke="#666"></path><path d="M0 320H400" stroke="#666"></path><path d="M320 0V400" stroke="#666"></path><path d="M0 330H400" stroke="#666"></path><path d="M330 0V400" stroke="#666"></path><path d="M0 340H400" stroke="#666"></path><path d="M340 0V400" stroke="#666"></path><path d="M0 350H400" stroke="#666"></path><path d="M350 0V400" stroke="#666"></path><path d="M0 360H400" stroke="#666"></path><path d="M360 0V400" stroke="#666"></path><path d="M0 370H400" stroke="#666"></path><path d="M370 0V400" stroke="#666"></path><path d="M0 380H400" stroke="#666"></path><path d="M380 0V400" stroke="#666"></path><path d="M0 390H400" stroke="#666"></path><path d="M390 0V400" stroke="#666"></path><path d="M0 400H400" stroke="#666"></path><path d="M400 0V400" stroke="#666"></path>
+        </svg>
+        <svg width="400" height="400" id="svg">
+            <!-- <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-bg"/>
+            <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-ani"/> -->
+            <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200A130 130 0 0 0 200 400" class="svg-bg"/>
+            <!-- <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200L180 290L190 320L230 180L240 300L260 270L270 360L290 280L300 300L340 240L400 400Z" class="svg-bg"/> -->
+            <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200L180 290L190 320L230 180L240 300L260 270L270 360L290 280L300 300L340 240L400 400Z" class="svg-ani"/>
+            <!-- <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200A140 140 0 0 0 180 370L190 220C280 220,280 300,220 300C280 300,270 380,230 380L390 380A10 10 0 1 1 390 400Z" class="svg-ani"/> -->
         </svg><br>
         <svg width="100" height="100">
             <path d="M20 10A30 30 0 1 1 10 20L30 30Z" class="svg-bg"/>
@@ -105,12 +123,31 @@
             //         img.src = url;
             //     })
             // })
+            // drawGrid();
             const path = document.querySelectorAll('.svg-ani');
             path.forEach(e => {
                 const len = e.getTotalLength();
-                e.style.strokeDasharray = `${30} ${len - 30}`;
+                const strikeLen = 100;
+                e.style.strokeDasharray = `${strikeLen} ${len - strikeLen}`;
                 e.style.strokeDashoffset = len;
             })
+        }
+        function drawGrid() {
+            const grid = document.createElement('svg');
+            const svg = document.querySelector('#svg');
+            grid.setAttribute('width', 400);
+            grid.setAttribute('height', 400);
+            for (let i = 0;i<= 40;i ++) {
+                grid.appendChild(createPath(`M0 ${i * 10}H400`));
+                grid.appendChild(createPath(`M${i * 10} 0V400`));
+            }
+            console.log(grid.innerHTML);
+            function createPath(d) {
+                const path = document.createElement('path');
+                path.setAttribute('d', d);
+                path.setAttribute('stroke', '#666');
+                return path;
+            }
         }
     </script>
 </body>
