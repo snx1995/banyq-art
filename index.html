@@ -24,10 +24,36 @@
             width: 100%;
             height: 100%;
         }
+        path, circle {
+            stroke: #ddd;
+            stroke-width: 2px;
+            fill: none;
+            stroke-linejoin: round;
+        }
+        .svg-ani {
+            stroke: #fff;
+            fill: none;
+            animation: loading 3s infinite;
+        }
+        .svg-bg {
+            stroke: #000;
+            fill: none;
+        }
+        @keyframes loading {
+            /* 0%, 100% {
+                stroke-dashoffset: 155;
+            }
+            50% {
+                stroke-dashoffset: 0;
+            } */
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="swiper-container">
+    <!-- <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-color: #00b3ee;">
                 <img class="slide-img">
@@ -43,27 +69,47 @@
             </div>
         </div>
         <div class="swiper-pagination"></div>
+    </div> -->
+    <div class="loading-overlay">
+        <svg width="400" height="400">
+            <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-bg"/>
+            <path d="M10 10C120 10, 120 90, 50 100C120 110, 120 190, 10 190Z" class="svg-ani"/>
+        </svg><br>
+        <svg width="100" height="100">
+            <path d="M20 10A30 30 0 1 1 10 20L30 30Z" class="svg-bg"/>
+            <path d="M20 10A30 30 0 1 1 10 20L30 30Z" class="svg-ani"/>
+        </svg><br>
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="30" class="svg-ani"/>
+            <path d="M0 50H100" class="svg-ani"/>
+        </svg>
     </div>
     <script src="./js/axios.min.js"></script>
     <script src="./js/swiper.min.js"></script>
     <script src="./js/load.js"></script>
     <script>
         window.onload = () => {
-            const swiper = new Swiper('.swiper-container', {
-                direction: 'vertical',
-                loop: false,
-                pagination: {
-                    el: '.swiper-pagination'
-                }
-            })
-            const slideImgs = document.querySelectorAll('.slide-img');
-            load(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
-                console.log(data);
-                alert('preload completed');
-                slideImgs.forEach((img, i) => {
-                    const url = URL.createObjectURL(data[i]);
-                    img.src = url;
-                })
+            // const swiper = new Swiper('.swiper-container', {
+            //     direction: 'vertical',
+            //     loop: false,
+            //     pagination: {
+            //         el: '.swiper-pagination'
+            //     }
+            // })
+            // const slideImgs = document.querySelectorAll('.slide-img');
+            // load(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
+            //     console.log(data);
+            //     alert('preload completed');
+            //     slideImgs.forEach((img, i) => {
+            //         const url = URL.createObjectURL(data[i]);
+            //         img.src = url;
+            //     })
+            // })
+            const path = document.querySelectorAll('.svg-ani');
+            path.forEach(e => {
+                const len = e.getTotalLength();
+                e.style.strokeDasharray = `${30} ${len - 30}`;
+                e.style.strokeDashoffset = len;
             })
         }
     </script>
