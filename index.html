@@ -26,7 +26,7 @@
         }
         path, circle {
             stroke: #ddd;
-            stroke-width: 1px;
+            stroke-width: 2px;
             fill: none;
             stroke-linejoin: round;
         }
@@ -103,6 +103,8 @@
             <!-- <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200L180 290L190 320L230 180L240 300L260 270L270 360L290 280L300 300L340 240L400 400Z" class="svg-bg"/> -->
             <!-- <path d="M20 40A20 20 0 1 1 40 20H37A3 3 0 1 0 33 18A12 12 1 0 0 19 18A3 3 0 1 0 15 20L18 29L19 32L23 18L24 30L26 27L27 36L29 28L30 30L34 24L40 40Z" class="svg-ani"/> -->
             <!-- <path d="M200 400A200 200 0 1 1 400 200H370A28 28 0 1 0 330 180A120 120 1 0 0 190 180A28 28 0 1 0 150 200A140 140 0 0 0 180 370L190 220C280 220,280 300,220 300C280 300,270 380,230 380L390 380A10 10 0 1 1 390 400Z" class="svg-ani"/> -->
+            <path d="M100 180A80 80 0 1 1 180 100H168A12 12 0 1 0 152 92A48 48 1 0 0 96 92A12 12 0 1 0 80 100A52 52 0 0 0 100 180" class="svg-bg"/>
+            <path d="M100 180A80 80 0 1 1 180 100H168A12 12 0 1 0 152 92A48 48 1 0 0 96 92A12 12 0 1 0 80 100A52 52 0 0 0 100 180" class="svg-ani"/>
         </svg>
         <!-- <br>
         <svg width="200" height="200" id="svg">
@@ -139,7 +141,7 @@
             //     })
             // })
             // drawGrid();
-            draw(5);
+            // draw(4);
             const path = document.querySelectorAll('.svg-ani');
             path.forEach(e => {
                 const len = e.getTotalLength();
@@ -161,10 +163,9 @@
         }
         function draw(scale) {
             const svg = document.querySelector('#svg');
-            const bg = `<path d="M${20 * scale} ${40 * scale}A${20 * scale} ${20 * scale} 0 1 1 ${40 * scale} ${20 * scale}H${37 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${33 * scale} ${18 * scale}A${12 * scale} ${12 * scale} 1 0 0 ${19 * scale} ${18 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${15 * scale} ${20 * scale}A${13 * scale} ${13 * scale} 0 0 0 ${20 * scale} ${40 * scale}" class="svg-bg"></path>`;
-            // const ani = `<path d="M${20 * scale} ${40 * scale}A${20 * scale} ${20 * scale} 0 1 1 ${40 * scale} ${20 * scale}H${37 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${33 * scale} ${18 * scale}A${12 * scale} ${12 * scale} 1 0 0 ${19 * scale} ${18 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${15 * scale} ${20 * scale}L${18 * scale} ${29 * scale}L${19 * scale} ${32 * scale}L${23 * scale} ${18 * scale}L${24 * scale} ${30 * scale}L${26 * scale} ${27 * scale}L${27 * scale} ${36 * scale}L${29 * scale} ${28 * scale}L${30 * scale} ${30 * scale}L${34 * scale} ${24 * scale}L${40 * scale} ${40 * scale}Z" class="svg-ani"></path>`
-            const ani2 = `<path d="M${20 * scale} ${40 * scale}A${20 * scale} ${20 * scale} 0 1 1 ${40 * scale} ${20 * scale}H${37 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${33 * scale} ${18 * scale}A${12 * scale} ${12 * scale} 1 0 0 ${19 * scale} ${18 * scale}A${3 * scale} ${3 * scale} 0 1 0 ${15 * scale} ${20 * scale}A${13 * scale} ${13 * scale} 0 0 0 ${20 * scale} ${40 * scale}" class="svg-ani"></path>`;
-            svg.innerHTML = bg + ani2;
+            const bg = `<path d="M${20 * scale + 20} ${40 * scale + 20}A${20 * scale} ${20 * scale} 0 1 1 ${40 * scale + 20} ${20 * scale + 20}H${37 * scale + 20}A${3 * scale} ${3 * scale} 0 1 0 ${33 * scale + 20} ${18 * scale + 20}A${12 * scale} ${12 * scale} 1 0 0 ${19 * scale + 20} ${18 * scale + 20}A${3 * scale} ${3 * scale} 0 1 0 ${15 * scale + 20} ${20 * scale + 20}A${13 * scale} ${13 * scale} 0 0 0 ${20 * scale + 20} ${40 * scale + 20}" class="svg-bg"></path>`;
+            const ani = `<path d="M${20 * scale + 20} ${40 * scale + 20}A${20 * scale} ${20 * scale} 0 1 1 ${40 * scale + 20} ${20 * scale + 20}H${37 * scale + 20}A${3 * scale} ${3 * scale} 0 1 0 ${33 * scale + 20} ${18 * scale + 20}A${12 * scale} ${12 * scale} 1 0 0 ${19 * scale + 20} ${18 * scale + 20}A${3 * scale} ${3 * scale} 0 1 0 ${15 * scale + 20} ${20 * scale + 20}A${13 * scale} ${13 * scale} 0 0 0 ${20 * scale + 20} ${40 * scale + 20}" class="svg-ani"></path>`;
+            svg.innerHTML = bg + ani;
         }
         function createPath(d, stroke) {
                 const path = document.createElement('path');
