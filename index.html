@@ -44,6 +44,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        .svg-fin {
+            fill: #12CBC4;
+            opacity: 0;
+            transition: opacity 1s;
+        }
         .svg-ani {
             stroke: #12CBC4;
             fill: none;
@@ -79,6 +84,14 @@
         .loading-overlay.finished {
             opacity: 0;
         }
+        .loading-overlay.finished .svg-ani {
+            stroke-dasharray: 99999;
+            animation: none;
+            transition: stroke-dasharray 1s;
+        }
+        .loading-overlay.finished .svg-fin {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -100,6 +113,7 @@
     </div>
     <div class="loading-overlay">
         <svg width="200" height="200" id="svg">
+            <path d="M100 180A80 80 0 1 1 180 100H168A12 12 0 1 0 152 92A48 48 1 0 0 96 92A12 12 0 1 0 80 100A52 52 0 0 0 100 180" class="svg-fin"/>
             <path d="M100 180A80 80 0 1 1 180 100H168A12 12 0 1 0 152 92A48 48 1 0 0 96 92A12 12 0 1 0 80 100A52 52 0 0 0 100 180" class="svg-bg"/>
             <path d="M100 180A80 80 0 1 1 180 100H168A12 12 0 1 0 152 92A48 48 1 0 0 96 92A12 12 0 1 0 80 100A52 52 0 0 0 100 180" class="svg-ani"/>
         </svg>
@@ -137,7 +151,9 @@
         
             function overlayListener() {
                 loadingOverlay.removeEventListener('transitionend', overlayListener, false);
-                loadingOverlay.style.display = 'none';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 2000)
             }
         }
         function drawGrid() {
