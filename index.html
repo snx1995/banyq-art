@@ -73,9 +73,11 @@
             left: 0;
             background: radial-gradient(ellipse at top, #1abc9c, transparent), radial-gradient(ellipse at bottom, #2980b9, transparent);
             z-index: 99999;
+            opacity: 1;
+            transition: opacity 1s;
         }
         .loading-overlay.finished {
-            display: none;
+            opacity: 0;
         }
     </style>
 </head>
@@ -95,7 +97,6 @@
                 <img class="slide-img">
             </div>
         </div>
-        <div class="swiper-pagination"></div>
     </div>
     <div class="loading-overlay">
         <svg width="200" height="200" id="svg">
@@ -114,10 +115,7 @@
 
             const swiper = new Swiper('.swiper-container', {
                 direction: 'vertical',
-                loop: false,
-                pagination: {
-                    el: '.swiper-pagination'
-                }
+                loop: false
             })
             const slideImgs = document.querySelectorAll('.slide-img');
             load(['./imgs/1.jpg', './imgs/2.jpg', './imgs/3.jpg', './imgs/3.jpg']).then(data => {
