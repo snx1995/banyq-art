@@ -81,13 +81,13 @@
             opacity: 1;
             transition: opacity 1s;
         }
-        .loading-overlay.finished {
+        .loading-overlay.hide {
             opacity: 0;
         }
         .loading-overlay.finished .svg-ani {
-            stroke-dasharray: 99999;
-            animation: none;
-            transition: stroke-dasharray 1s;
+            stroke-dasharray: 654.5 654.5;
+            stroke-dashoffset: 654.5;
+            animation: loading 3s linear;
         }
         .loading-overlay.finished .svg-fin {
             opacity: 1;
@@ -151,9 +151,9 @@
         
             function overlayListener() {
                 loadingOverlay.removeEventListener('transitionend', overlayListener, false);
-                setTimeout(() => {
-                    loadingOverlay.style.display = 'none';
-                }, 2000)
+                // setTimeout(() => {
+                //     loadingOverlay.style.display = 'none';
+                // }, 2000)
             }
         }
         function drawGrid() {
