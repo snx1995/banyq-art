@@ -26,7 +26,7 @@ export default {
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding-top: 20px;
     .file {
         margin-top: 10px;
         box-sizing: border-box;
@@ -49,6 +49,7 @@ export default {
             flex-grow: 0;
             min-width: 0;
             .file-name {
+                box-sizing: border-box;
                 width: 100%;
                 overflow: hidden;
                 white-space: nowrap;
@@ -56,6 +57,7 @@ export default {
                 font-size: 28px;
                 color: #111;
                 width: 100%;
+                padding-right: 20px;
             }
             .file-size {
                 font-size: 24px;

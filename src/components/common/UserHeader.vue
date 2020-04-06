@@ -38,7 +38,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 30px;
         box-sizing: border-box;
         .info-bar {
             flex-shrink: 1;

@@ -37,7 +37,21 @@
                                 { name: '关关雎鸠，在河之洲，窈窕淑女，君子好逑.file', size:'1M' },
                                 { name: '蒹葭苍苍，白露为霜。所谓伊人，在水一方.file', size:'2.1M' },
                                 { name: '知我者，谓我心忧；不知我者，谓我何求，悠悠苍天，此何人哉?.file', size:'1.3M' }
-                            ]
+                            ],
+                            image: [
+                                { url: '../../static/imgs/0.JPG' },
+                                { url: '../../static/imgs/1.JPG' },
+                                { url: '../../static/imgs/2.JPG' },
+                                { url: '../../static/imgs/3.JPG' },
+                                { url: '../../static/imgs/4.JPG' },
+                                { url: '../../static/imgs/5.JPG' },
+                                { url: '../../static/imgs/6.JPG' },
+                                { url: '../../static/imgs/7.JPG' },
+                                { url: '../../static/imgs/8.JPG' }
+                            ],
+                            video: {
+                                url: '../../static/video/example.mp4'
+                            }
                         }
                     },
                     {
@@ -218,6 +232,13 @@
                     }
                 ]
             }
+        },
+        mounted() {
+            this.$net.get('../../static/imgs/8.JPG', {
+                responseType: 'blob'
+            }).then(res => {
+                console.log(res)
+            })
         }
     }
 </script>
