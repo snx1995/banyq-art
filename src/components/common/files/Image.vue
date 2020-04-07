@@ -55,13 +55,16 @@ export default {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    padding-top: 20px;
     .image-wrapper {
-        padding: 5px;
         overflow: hidden;
         flex-shrink: 0;
-        width: 234px;
-        height: 234px;
-        box-sizing: border-box;
+        width: 224px;
+        height: 224px;
+        padding-bottom: 15px;
+        &:not(:nth-child(3n + 1)) {
+            padding-left: 15px;
+        }
     }
 }
 </style>
