@@ -39,15 +39,15 @@
                                 { name: '知我者，谓我心忧；不知我者，谓我何求，悠悠苍天，此何人哉?.file', size:'1.3M' }
                             ],
                             image: [
-                                { url: 'http://res.banyq.art/0.JPG' },
-                                { url: 'http://res.banyq.art/1.JPG' },
-                                { url: 'http://res.banyq.art/2.JPG' },
-                                { url: 'http://res.banyq.art/3.JPG' },
-                                { url: 'http://res.banyq.art/4.JPG' },
-                                { url: 'http://res.banyq.art/5.JPG' },
-                                { url: 'http://res.banyq.art/6.JPG' },
-                                { url: 'http://res.banyq.art/7.JPG' },
-                                { url: 'http://res.banyq.art/8.JPG' }
+                                // { url: 'http://res.banyq.art/0.JPG' },
+                                // { url: 'http://res.banyq.art/1.JPG' },
+                                // { url: 'http://res.banyq.art/2.JPG' },
+                                // { url: 'http://res.banyq.art/3.JPG' },
+                                // { url: 'http://res.banyq.art/4.JPG' },
+                                // { url: 'http://res.banyq.art/5.JPG' },
+                                // { url: 'http://res.banyq.art/6.JPG' },
+                                // { url: 'http://res.banyq.art/7.JPG' },
+                                // { url: 'http://res.banyq.art/8.JPG' }
                             ],
                             video: {
                                 url: '../../static/video/example.mp4'
@@ -234,11 +234,12 @@
             }
         },
         mounted() {
-            // this.$net.get('../../static/imgs/8.JPG', {
-            //     responseType: 'blob'
-            // }).then(res => {
-            //     console.log(res)
-            // })
+            this.$net.post('/rest/auth/login', {
+                account: 'banyq',
+                password: '123456'
+            }).then(res => {
+                console.log(res)
+            })
         }
     }
 </script>
