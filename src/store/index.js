@@ -9,7 +9,9 @@ export default new Vuex.Store({
     },
     mutations: {
         addToCart(state, item) {
-            state.cart.push(item);
+            const index = state.cart.indexOf(item)
+            if (index != -1) state.cart[index].count += 1
+            else state.cart.push(item);
         },
         removeFromCart(state, item) {
             const index = state.cart.indexOf(item);

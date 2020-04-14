@@ -17,7 +17,7 @@
                     <img :src="item.img" alt="" width="100px" height="100px">
                 </td>
                 <td>{{item.price}}</td>
-                <td><button @click="addToCart(item)" :disabled="item.inCart">加入</button></td>
+                <td><button @click="addToCart(item)">加入</button></td>
             </tr>
         </table>
         <button @click="handleCommit">结算</button>
@@ -60,6 +60,7 @@ export default {
                 const list = res.data.data;
                 list.forEach(e => {
                     e.inCart = false;
+                    e.count = 1;
                 })
                 this.list = list;
             }

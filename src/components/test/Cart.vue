@@ -6,6 +6,7 @@
             <th>详情</th>
             <th>图片</th>
             <th>价格</th>
+            <th>数量</th>
             <th>操作</th>
         </tr>
         <tr v-for="(item, index) in list" :key="index">
@@ -16,6 +17,11 @@
                 <img :src="item.img" alt="" width="100px" height="100px">
             </td>
             <td>{{item.price}}</td>
+            <td>
+                <button @click="item.count ++">+</button>
+                <input type="text" v-model="item.count">
+                <button @click="item.count --">-</button>
+            </td>
             <td><button @click="remove(item)">移除</button></td>
         </tr>
         <tr>
@@ -36,14 +42,11 @@ export default {
             return this.$store.state.cart || [];
         },
         total() {
-            if (this.list.length > 0) {
-                return this.list.reduce((prev, curr) => {
-                    return {
-                        price: prev.price + curr.price
-                    }
-                }).price;
+            let sum = 0;
+            for (let i = 0;i < this.list.length;i ++) {
+                sum += this.list[i].price * this.list[i].count;
             }
-            return 0;
+            return sum;
         }
     },
     methods: {
