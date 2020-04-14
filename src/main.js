@@ -12,6 +12,7 @@ import 'vant/lib/index.css'
 import CommonUI from './components/common';
 
 import '../static/style/index.less';
+import '../static/style/less/index.less';
 
 Vue.config.productionTip = false
 
@@ -19,6 +20,7 @@ Vue.use(Vant);
 Vue.use(CommonUI);
 
 Vue.prototype.$net = axios;
+Vue.prototype.$Toast = Vant.Toast;
 
 /* eslint-disable no-new */
 new Vue({
