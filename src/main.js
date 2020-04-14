@@ -7,6 +7,7 @@ import store from './store'
 
 import axios from 'axios'
 import Vant from 'vant'
+import { Toast } from 'vant'
 import 'vant/lib/index.css'
 
 import CommonUI from './components/common';
@@ -16,11 +17,16 @@ import '../static/style/less/index.less';
 
 Vue.config.productionTip = false
 
+Toast.setDefaultOptions('loading', {
+    forbidClick: true,
+    duration: 0
+})
+
 Vue.use(Vant);
 Vue.use(CommonUI);
 
 Vue.prototype.$net = axios;
-Vue.prototype.$Toast = Vant.Toast;
+Vue.prototype.$Toast = Toast;
 
 /* eslint-disable no-new */
 new Vue({

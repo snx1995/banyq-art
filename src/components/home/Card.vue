@@ -6,7 +6,7 @@
         </div>
         <AAudio v-if="data.files && data.files.audio && data.files.audio.length" :data="data.files.audio"/>
         <AImage v-if="data.files && data.files.image && data.files.image.length" :data="data.files.image"/>
-        <AVideo v-if="data.files && data.files.video" :data="data.files.video"/>
+        <AVideo v-if="data.files && data.files.vi" :data="data.files.video"/>
         <AFile v-if="data.files && data.files.file && data.files.file.length" :data="data.files.file"/>
     </div>
 </template>
