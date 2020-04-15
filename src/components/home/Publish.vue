@@ -6,17 +6,15 @@
                 <span class="btn expand-btn" @click="expand = !expand">
                     <VanIcon :name="expand ? 'shrink' : 'expand-o'"/>
                 </span>
-                <span class="btn primary">发布</span>
+                <span class="btn primary" @click="handleSubmit">发布</span>
             </span>
         </div>
         <div class="input-wrapper">
-            <div contenteditable="true" class="comment">
-
-            </div>
+            <textarea contenteditable="true" class="comment" v-model="formData.content"></textarea>
         </div>
         <div class="image-upload-wrapper" :class="{show: showImages}">
             <div class="content">
-                <VanUploader v-model="images" multiple max-count="9"/>
+                <VanUploader v-model="images" multiple max-count="9" :after-read="handleImageUpload"/>
             </div>
         </div>
         <div class="footer">
@@ -29,7 +27,7 @@
             <span class="btn">
                 <VanIcon name="video-o"/>
             </span>
-            <span class="btn" @click="handleImageUpload">
+            <span class="btn" @click="showImages = !showImages">
                 <VanIcon name="photo-o"/>
             </span>
             <span class="btn">
@@ -45,12 +43,38 @@ export default {
         return {
             expand: false,
             showImages: false,
-            images: []
+            images: [],
+            formData: {
+                content: '',
+                userId: '100000'
+            }
         }
     },
     methods: {
-        handleImageUpload() {
-            this.showImages = !this.showImages
+        handleImageUpload(...args) {
+            console.log(args)
+        },
+        handlePublish() {
+            return this.$net.post('/message/publish', this.formData)
+        },
+        handleSubmit() {
+            // this.handlePublish().then(res => {
+            //     if (res.code == 0 && res.data) {
+
+            //     }
+            // })
+            const linkId = 4
+            const reqs = this.images.map(e => this.uploadFile(e.file, linkId))
+            Promise.all(reqs).then(res => {
+
+            })
+        },
+        uploadFile(file, linkId) {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('linkId', linkId);
+            formData.append('type', 'IMAGE');
+            return this.$net.post('/resource/upload', formData);
         }
     }
 }
@@ -98,6 +122,11 @@ export default {
             box-sizing: border-box;
             padding: 20px;
             border-radius: 0px;
+            display: block;
+            width: 100%;
+            height: auto;
+            border: none;
+            resize: none;
         }
 
     }

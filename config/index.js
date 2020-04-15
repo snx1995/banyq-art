@@ -12,7 +12,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             '/rest': {
-                target: 'http://www.banyq.art:10080',
+                target: 'http://localhost:8080',
                 pathRewrite: {
                     '/rest/': '/'
                 }
