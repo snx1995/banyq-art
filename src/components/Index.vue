@@ -4,23 +4,34 @@
 
         </div>
         <div class="body">
-            <Card v-for="(item, index) in data" :key="index" :data="item"/>
+            <VanPullRefresh v-model="loading" @refresh="onRefresh" success-text="加载成功">
+                <Card v-for="(item, index) in data" :key="index" :data="item"/>
+            </VanPullRefresh>
         </div>
         <div class="footer">
 
         </div>
+        <VanPopup 
+            position="bottom" 
+            :close-on-click-overlay="false" 
+            v-model="showPublish">
+            <Publish @close="showPublish = false"></Publish>
+        </VanPopup>
     </div>
 </template>
 <script>
+    import Publish from './home/Publish'; 
     import Card from './home/Card'
     export default {
         name: 'index',
         components: {
-            Card
+            Card,
+            Publish
         },
         data() {
             return {
                 activeTab: "home",
+                showPublish: false,
                 data: [
                     {
                         user: {
@@ -229,10 +240,23 @@
                         date: '21:33',
                         files: {}
                     }
-                ]
+                ],
+                loading: false
             }
         },
-        mounted() {}
+        methods: {
+            onRefresh() {
+                setTimeout(() => {
+                    this.loading = false;
+                }, 2000)
+            }
+        },
+        mounted() {
+            window.togglePublish = () => {
+                this.showPublish = !this.showPublish;
+                return this.showPublish ? 'showPublish' : 'hidePublish';
+            }
+        }
     }
 </script>
 <style lang="less" scoped>
@@ -253,6 +277,7 @@
         .body {
             flex-grow: 1;
             overflow: auto;
+            padding-bottom: 5vh;
         }
     }
 </style>

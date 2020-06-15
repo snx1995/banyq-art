@@ -6,13 +6,13 @@ Vue.use(Router)
 
 export default new Router({
     routes: [
+        // {
+        //     path: '/',
+        //     name: 'auth',
+        //     component: Auth
+        // },
         {
             path: '/',
-            name: 'auth',
-            component: Auth
-        },
-        {
-            path: '/index',
             name: 'index',
             component: () => import('@/components/Index')
         },
