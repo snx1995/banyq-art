@@ -1,5 +1,5 @@
 <template>
-    <div class="video-wrapper">
+    <div class="video-wrapper" @click.stop>
         <video :src="data.url" controls>您的浏览器不支持视频播放</video>
     </div>
 </template>

@@ -1,27 +1,25 @@
 <template>
     <div id="app">
-        <router-view />
+        <transition name="router-fade">
+            <router-view />
+        </transition>
     </div>
 </template>
-
 <script>
     export default {
         name: 'App'
     }
-
 </script>
-<style>
+<style lang="less">
     * {
         padding: 0;
         margin: 0;
     }
-
     body, html {
         width: 100vw;
         height: 100vh;
         position: relative;
     }
-
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -31,5 +29,13 @@
         height: 100%;
         background-color: #ecf0f1;
     }
-
+    .router-fade-enter, .router-fade-leave-to {
+        opacity: 0;
+        transform: scale(2);
+    }
+    .router-fade-enter-active, .router-fade-leave-active {
+        @dur: .5s;
+        transition: opacity @dur, transform @dur;
+        transform-origin: center;
+    }
 </style>

@@ -12,8 +12,7 @@ import 'vant/lib/index.css'
 
 import CommonUI from './components/common';
 
-import '../static/style/index.less';
-import '../static/style/less/index.less';
+import 'style/index.less';
 
 Vue.config.productionTip = false
 

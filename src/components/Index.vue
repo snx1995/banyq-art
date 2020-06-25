@@ -5,7 +5,7 @@
         </div>
         <div class="body">
             <VanPullRefresh v-model="loading" @refresh="onRefresh" success-text="加载成功">
-                <Card v-for="(item, index) in data" :key="index" :data="item"/>
+                <Card :data="item" @click.native="openDetail(item)" v-for="(item, index) in data" :key="index"/>
             </VanPullRefresh>
         </div>
         <div class="footer">
@@ -249,6 +249,12 @@
                 setTimeout(() => {
                     this.loading = false;
                 }, 2000)
+            },
+            openDetail(item) {
+                this.$router.push({
+                    name: 'detail',
+                    params: item
+                })
             }
         },
         mounted() {

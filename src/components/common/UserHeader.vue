@@ -1,5 +1,5 @@
 <template>
-    <div class="user-header">
+    <div class="user-header" @click.stop>
         <Avatar :userId="user.id" :url="user.avatar" />
         <div class="info-bar">
             <div class="name">{{user.name}}</div>

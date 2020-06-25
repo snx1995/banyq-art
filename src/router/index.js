@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Auth from '@/components/Auth'
 
 Vue.use(Router)
 
@@ -17,13 +16,9 @@ export default new Router({
             component: () => import('@/components/Index')
         },
         {
-            path: '/test',
-            name: 'test',
-            component: () => import('@/components/test/test')
-        },
-        {
-            path: '/cart',
-            component: () => import('@/components/test/Cart')
+            path: '/detail',
+            name: 'detail',
+            component: () => import('home/Detail')
         }
     ]
 })

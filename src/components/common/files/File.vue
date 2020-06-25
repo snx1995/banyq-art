@@ -1,5 +1,5 @@
 <template>
-    <div class="file-list">
+    <div class="file-list" @click.stop>
         <div class="file" v-for="(file, index) in data" :key="index">
             <div class="file-icon">
                 <Icon name="file-empty"/>

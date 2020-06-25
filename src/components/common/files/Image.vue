@@ -1,5 +1,5 @@
 <template>
-    <div class="image-list">
+    <div class="image-list" @click.stop>
         <div class="image-wrapper" v-for="(img, index) in data" :key="index" @click="handlePreview(index)" :class="{single: data.length == 1}">
             <!-- <img :src="img.url" @load="handleLoad" @click="handlePreview(index)"> -->
             <van-image height="100%" width="100%" :src="img.url" fit="cover"/>

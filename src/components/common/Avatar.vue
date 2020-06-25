@@ -1,5 +1,5 @@
 <template>
-    <div class="avatar-wrapper">
+    <div class="avatar-wrapper" @click.stop>
         <img :src="url" class="avatar">
     </div>
 </template>
