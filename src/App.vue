@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <transition name="router-fade">
+        <transition name="router-slide">
             <router-view />
         </transition>
     </div>
@@ -28,6 +28,7 @@
         width: 100%;
         height: 100%;
         background-color: #ecf0f1;
+        display: flex;
     }
     .router-fade-enter, .router-fade-leave-to {
         opacity: 0;
@@ -37,5 +38,16 @@
         @dur: .5s;
         transition: opacity @dur, transform @dur;
         transform-origin: center;
+    }
+    .router-slide-enter {
+        transform: translateX(-100%);
+    }
+    .router-slide-leave-to {
+        transform: translateX(100%);
+    }
+    .router-slide-enter-active, .router-slide-leave-active {
+        @dur: .5s;
+        transition: transform @dur;
+        transform: translateX(0);
     }
 </style>

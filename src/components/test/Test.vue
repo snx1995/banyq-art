@@ -1,12 +1,6 @@
 <template>
     <div class="test">
-        <button @click="showPublish = true">publish</button>
-        <VanPopup 
-            position="bottom" 
-            :close-on-click-overlay="false" 
-            v-model="showPublish">
-            <Publish @close="showPublish = false"></Publish>
-        </VanPopup>
+        <button @click="handleComment">Comment</button>
     </div>
 </template>
 <script>
@@ -22,7 +16,9 @@ export default {
         }
     },
     methods: {
-
+        handleComment() {
+            AkiuBridge.comment()
+        }
     }
 }
 </script>
