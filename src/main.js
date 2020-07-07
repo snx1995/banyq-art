@@ -9,12 +9,14 @@ import axios from 'axios'
 import Vant from 'vant'
 import { Toast } from 'vant'
 import 'vant/lib/index.css'
+import antiShake from 'directives/anti_shake'
 
 import CommonUI from './components/common';
 
 import 'style/index.less';
 
 Vue.config.productionTip = false
+Vue.directive('anti-shake', antiShake);
 
 Toast.setDefaultOptions('loading', {
     forbidClick: true,

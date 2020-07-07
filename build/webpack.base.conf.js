@@ -30,7 +30,8 @@ module.exports = {
             'common': resolve('./src/components/common'),
             'home': resolve('./src/components/home'),
             'style': resolve('./src/style'),
-            'components': resolve('./src/components')
+            'components': resolve('./src/components'),
+            'directives': resolve('./src/directives')
         }
     },
     module: {

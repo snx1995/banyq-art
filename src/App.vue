@@ -29,15 +29,19 @@
         height: 100%;
         background-color: #ecf0f1;
         display: flex;
+        position: relative;
+        > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
     .router-fade-enter, .router-fade-leave-to {
         opacity: 0;
-        transform: scale(2);
     }
     .router-fade-enter-active, .router-fade-leave-active {
         @dur: .5s;
-        transition: opacity @dur, transform @dur;
-        transform-origin: center;
+        transition: opacity @dur;
     }
     .router-slide-enter {
         transform: translateX(-100%);
