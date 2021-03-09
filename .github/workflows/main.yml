@@ -1,0 +1,22 @@
+name: BanyqArt deploy
+
+on:
+  push:
+    branches: [develop]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      run: 
+        echo 'step build'
+        pwd
+        node -v
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      run:
+        echo 'step publish'
+        npm -v
