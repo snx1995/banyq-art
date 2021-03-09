@@ -10,13 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      run: 
+      run: |
         echo 'step build'
         pwd
         node -v
   publish:
     runs-on: ubuntu-latest
     steps:
-      run:
+      run: |
         echo 'step publish'
         npm -v
+        
+        
