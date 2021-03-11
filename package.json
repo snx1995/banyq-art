@@ -5,7 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --config ./webpack/dev.js --inline --hot",
-    "test": "npm run test"
+    "test": "npm run test",
+    "build": "rm -rf dist && webpack --config ./webpack/build.js"
   },
   "repository": {
     "type": "git",

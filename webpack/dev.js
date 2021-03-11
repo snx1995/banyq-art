@@ -2,6 +2,7 @@ const base = require('./base');
 const path = require('path');
 
 module.exports = Object.assign(base, {
+    mode: 'development',
     devServer: {
         host: '0.0.0.0',
         port: 54321,
