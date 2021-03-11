@@ -2,19 +2,18 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const Webpack = require('webpack');
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/main.js'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].[hash].js'
     },
     target: 'web',
     resolve: {
         alias: {
             'vue': 'vue/dist/vue.min.js',
-            '@src': path.resolve(__dirname, 'src'),
+            '@src': path.resolve(__dirname, '../src'),
             '@component': '@src/component',
             '@utils': '@src/utils',
             '@static': '@src/static',
