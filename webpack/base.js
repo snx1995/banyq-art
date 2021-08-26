@@ -49,7 +49,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|gif|jpg)$/,
+                test: /\.(eot|svg|ttf|woff|woff2|png|gif|jpg|jpeg)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 128

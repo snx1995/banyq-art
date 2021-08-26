@@ -44,6 +44,7 @@
         align-items: center;
         justify-content: center;
         background-image: linear-gradient(45deg, #1abc9c, #e67e22);
+        opacity: .8;
     }
 }
 </style>

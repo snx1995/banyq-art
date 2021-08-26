@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/snx1995/banyq-art#readme",
   "dependencies": {
+    "file-loader": "^6.2.0",
     "sass-loader": "^10.1.1",
+    "url-loader": "^4.1.1",
     "vanilla-tilt": "^1.7.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",

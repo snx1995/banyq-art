@@ -23,5 +23,10 @@ html, body {
 }
 #app {
     background-color: transparent;
+    background-size: cover;
+    background-image: url('./assets/bg.jpeg');
 }
+</style>
+<style lang="less" scoped>
+
 </style>
