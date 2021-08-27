@@ -5,7 +5,7 @@
         </div>
 
         <v-snackbar v-model="showSnackbar" timeout="0">
-            Welcome!!(HHha!)
+            Welcome!!(Here comes the log page!)
 
             <template v-slot:action="{attrs}">
                 <v-btn v-bind="attrs" color="pink" text @click="showSnackbar = false">
