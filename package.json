@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/snx1995/banyq-art#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "file-loader": "^6.2.0",
     "sass-loader": "^10.1.1",
     "url-loader": "^4.1.1",

@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-import Index from '@component'
+import Index from '@components'
 
 export default new Router({
     routes: [
@@ -19,7 +19,12 @@ export default new Router({
         {
             name: 'test',
             path: '/test',
-            component: () => import('@component/test')
+            component: () => import('@components/test')
+        },
+        {
+            name: 'systemLogs',
+            path: '/systemLogs',
+            component: () => import('@components/logs')
         }
     ],
     mode: 'hash'

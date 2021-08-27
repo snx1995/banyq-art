@@ -14,7 +14,7 @@ module.exports = {
         alias: {
             'vue': 'vue/dist/vue.min.js',
             '@src': path.resolve(__dirname, '../src'),
-            '@component': '@src/component',
+            '@components': '@src/components',
             '@utils': '@src/utils',
             '@static': '@src/static',
             '@assets': '@src/assets'

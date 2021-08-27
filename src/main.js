@@ -5,7 +5,11 @@ import 'vuetify/dist/vuetify.min.css';
 import App from './App';
 import router from './router';
 
+import axiosInstance from './lib/http';
+
 Vue.use(Vuetify);
+
+Vue.prototype.$axios = axiosInstance;
 
 
 new Vue({
