@@ -21,6 +21,7 @@ export default {
         }
     },
     created() {
+        this.getLogs();
         this.timer = setInterval(this.getLogs, FETCH_DELAY);
     },
     beforeDestroy() {
